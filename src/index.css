@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 90% 52%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 45 90% 52%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 45 90% 52%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-black text-white;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-gold { color: #D4AF37; }
+  .bg-gold { background-color: #D4AF37; }
+  .bg-gold-dark { background-color: #B8941F; }
+  .border-gold { border-color: #D4AF37; }
+  .bg-grad-gold { background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%); }
+}
+
+/* WhatsApp pulse */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+}
+.whatsapp-pulse { animation: whatsapp-pulse 2s infinite; }
+
+/* Card hover */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+}
+
+/* Input focus */
+input:focus, textarea:focus, select:focus { outline: none; }
+
+/* Selection */
+::selection {
+  background: rgba(212, 175, 55, 0.25);
+  color: white;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
